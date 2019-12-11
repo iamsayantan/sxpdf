@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        *{
+            margin: 0px;
+            font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+        .name tr td p {
+            text-align: left;
+            font-size: 13px;
+        }
+        .name tr td {
+            text-align: center;
+            font-size: 13px;
+        }
+        .name tr th {
+            font-size: 13px;
+            padding: 5px 0px 6px 0px;
+        }
+        .footer-table tr td {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body style="background: #efefef;">
+<center>
+    <div style="width: 950px; background: #fff; border: 1px solid #bbbbbb; border-radius: 6px;">
+
+        <table style="width: 100%;">
+            <tr>
+                <th style="padding-top: 20px;">
+                    <h1 style="text-transform: uppercase;">
+                        {{ property_name }}
+                    </h1>
+                </th>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-size: 12px;">
+                    <span>
+                        CIN : {{ developer_cin }}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-size: 12px;">
+                    <span>
+                        {{ property_address }}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center; font-size: 12px;">
+                    <span>
+                        Ph. No.: {{ property_phone_no }}, Fax No. {{ property_fax_no }}
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 20px 0px 10px 0px;"><hr style="border: 1px solid #efefef; " /></td>
+            </tr>
+            <tr>
+                <th >
+                    <h5>TAX INVOICE</h5>
+                </th>
+            </tr>
+            <tr>
+                <td style="padding: 10px 0px 0px 0px;"><hr style="border: 1px solid #efefef; " /></td>
+            </tr>
+        </table>
+
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 500px; padding: 10px 20px 10px 20px;">
+                    <table class="name">
+                        <tr>
+                            <td style="width: 110px;"><p>Name</p></td>
+                            <td>
+                                <p>{{ owner_name }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Address</p></td>
+                            <td>
+                                <p>{{ owner_address }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Block No.</p></td>
+                            <td>
+                                <p>{{ block_no }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>Unit No.</p></td>
+                            <td>
+                                <p>{{ unit_no }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>GSTIN</p></td>
+                            <td>
+                                <p>{{ owner_gstin }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>State</p></td>
+                            <td><p>{{ property_state }}</p></td>
+                        </tr>
+                    </table>
+                </td>
+                <td style=" padding: 10px 20px 10px 20px; font-size: 14px;">
+                    <table class="name">
+                        <tr>
+                            <td style="width: 200px;"><p>Invoice No.</p></td>
+                            <td><p>{{ invoice_number }}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Invoice Date</p></td>
+                            <td><p>{{ invoice_date }}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>OUR GSTIN</p></td>
+                            <td><p>{{ property_gstin }}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>OUR PAN</p></td>
+                            <td><p>{{ property_pan }}</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>State</p></td>
+                            <td><p>{{ property_state }}</p></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr style="border: 1px solid #efefef; " />
+                </td>
+            </tr>
+        </table>
+
+        <table style="width: 100%" class="name">
+            <tr>
+                <th>#</th>
+                <th style="width: 400px;">Particulars</th>
+                <th>Period</th>
+                <th>SAC Code</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td colspan="5"><hr style="border: 1px solid #efefef;" /></td>
+            </tr>
+            <tr>
+                <td>
+                    #
+                </td>
+                <td>
+                    {{ particular }}
+                </td>
+                <td>
+                    {{ period }}
+                </td>
+                <td>
+                    {{ sac_code }}
+                </td>
+                <td>
+                    {{ amount }}
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="5"><hr style="border: 1px solid #efefef;" /></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="3"></td>
+                <td>Taxable Value</td>
+                <td>{{ taxable_value }}</td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="2"><hr style="border: 1px solid #efefef;" /></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td>CGST @ 9%</td>
+                <td>{{ cgst }}</td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td colspan="2"><hr style="border: 1px solid #efefef;" /></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td>SGST @ 9%</td>
+                <td>{{ sgst }}</td>
+            </tr>
+
+            <tr>
+                <td colspan="5"><hr style="border: 1px solid #efefef;" /></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td style="font-weight: 600;">Total Amount After Tax</td>
+                <td style="font-weight: 600;">{{ total_amount }}</td>
+            </tr>
+            <tr>
+                <td colspan="5"><hr style="border: 1px solid #efefef;" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="5" style="font-style:italic; font-weight: 600; text-align: left; padding-left: 10px;">
+                    Rupees {{ total_amount_in_words }} Only
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5"><hr style="border: 1px solid #efefef;" /></td>
+            </tr>
+        </table>
+
+
+        <table style="width: 100%; padding-bottom: 40px;" class="footer-table">
+            <tr>
+                <td style="padding: 30px 5px 0px 10px;">
+                    <p style="text-decoration: underline; font-style: italic;">Terms &amp; Conditions</p>
+                        {{#termArray}}
+                      <span>*{{terms}}</span><br/>
+                        {{/termArray}}
+                </td>
+            </tr>
+        </table>
+
+        <table style="width: 100%;" class="name" cellspacing=0 border="1">
+            <tr>
+                <td colspan="3">
+                    Details Of Area Payment &amp; Payble
+                </td>
+            </tr>
+
+            <tr>
+                <td>Details</td>
+                <td>Balance Type</td>
+                <td>Amount</td>
+            </tr>
+
+            <tr>
+                <td>
+                    {{opening_balance_description}}
+                </td>
+                <td>
+                    {{opening_balance_type}}
+                </td>
+                <td>
+                    {{opening_balance_amount}}
+                </td>
+            </tr>
+        </table>
+
+
+        <table style="width: 100%;">
+            <tr>
+                <td><hr/></td>
+            </tr>
+            <tr>
+                <td style="font-style: italic; font-weight: 800; padding: 10px 10px 10px 19px;">
+                    * Outstanding payments if any had been mentioned in the previous bill. Same if any
+                    would again be reflected in next bill *
+                </td>
+            </tr>
+        </table>
+
+
+        <table style="width: 100%; padding-bottom: 22px;">
+            <tr>
+                <td colspan="2">
+                    <hr style="border: 1px solid #efefef;" />
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right; font-size: 12px;">Powered By</td>
+                <td style="width: 160px;">
+                    <img src="http://securnyx360.com/images/logo.png" style="width: 150px;" />
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%; padding-bottom: 80px;" class="footer-table">
+            <tr>
+                <td style="padding: 0px 5px 0px 20px;">
+                <span style="font-style: italic;">This is a computer generated invoice. No signature is required.</span>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+</center>
+</body>
+</html>
